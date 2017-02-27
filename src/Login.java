@@ -38,7 +38,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         tpass = new javax.swing.JTextField();
-        tnama = new javax.swing.JTextField();
+        tuser = new javax.swing.JTextField();
         btnin = new javax.swing.JButton();
         btnup = new javax.swing.JButton();
         btnexit = new javax.swing.JButton();
@@ -57,8 +57,8 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setBounds(160, 50, 80, 30);
         getContentPane().add(tpass);
         tpass.setBounds(100, 180, 190, 40);
-        getContentPane().add(tnama);
-        tnama.setBounds(100, 90, 190, 40);
+        getContentPane().add(tuser);
+        tuser.setBounds(100, 90, 190, 40);
 
         btnin.setText("Sign In");
         btnin.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +92,7 @@ public class Login extends javax.swing.JFrame {
 
     private void btnupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupActionPerformed
         // TODO add your handling code here:
-        String username= tnama.getText();
+        String username= tuser.getText();
         String password = tpass.getText();
         
         try{
@@ -112,7 +112,7 @@ public class Login extends javax.swing.JFrame {
         try{
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_testkoneksi?zeroDateTimeBehavior=convertToNull","root","");
             ps = connection.prepareStatement("SELECT username, password FROM tb_akun WHERE username = ? AND password= ?");
-            ps.setString(1, tnama.getText());
+            ps.setString(1, tuser.getText());
             ps.setString(2, tpass.getText());
             ResultSet result = ps.executeQuery();
             if (result.next()) {
@@ -122,7 +122,7 @@ public class Login extends javax.swing.JFrame {
             else{
                 JOptionPane.showMessageDialog(rootPane,"salah!");
                 tpass.setText("");
-                tnama.requestFocus();
+                tuser.requestFocus();
             }
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(rootPane, "gagal");
@@ -176,7 +176,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btnup;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField tnama;
     private javax.swing.JTextField tpass;
+    private javax.swing.JTextField tuser;
     // End of variables declaration//GEN-END:variables
 }
