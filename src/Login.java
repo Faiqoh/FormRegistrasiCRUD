@@ -42,8 +42,10 @@ public class Login extends javax.swing.JFrame {
         btnin = new javax.swing.JButton();
         btnup = new javax.swing.JButton();
         btnexit = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 51, 51));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -86,6 +88,11 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(btnexit);
         btnexit.setBounds(150, 240, 80, 30);
+
+        jPanel1.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel1.setLayout(null);
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 400, 300);
 
         setBounds(0, 0, 416, 339);
     }// </editor-fold>//GEN-END:initComponents
@@ -176,6 +183,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btnup;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField tpass;
     private javax.swing.JTextField tuser;
     // End of variables declaration//GEN-END:variables
