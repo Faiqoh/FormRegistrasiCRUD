@@ -249,19 +249,23 @@ public class frmMain extends javax.swing.JFrame {
 
     private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
         // TODO add your handling code here:
+        int confirm = JOptionPane.showConfirmDialog(this, "Anda yakin ingin menghapus data?","", JOptionPane.YES_NO_OPTION);
         int baris = tbldata.getSelectedRow();
+        if (confirm==0) {
+            
+        
         if (baris != -1) {
             String NIS = tbldata.getValueAt(baris, 0).toString();
             String SQL = "DELETE FROM t_siswa WHERE NIS='"+NIS+"'";
             int status = KoneksiDB.execute(SQL);
-            if (status == 1) {
+            if (status==1) {
                 JOptionPane.showMessageDialog(this, "Data berhasil dihapus", "Sukses", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "DATA gagal dihapus", "Gagal", JOptionPane.WARNING_MESSAGE);
             }
         } else {
             JOptionPane.showMessageDialog(this, "Pilih Baris Data Terlebih dahulu", "Error", JOptionPane.WARNING_MESSAGE);
-        }
+        } }
     }//GEN-LAST:event_btndeleteActionPerformed
 
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
