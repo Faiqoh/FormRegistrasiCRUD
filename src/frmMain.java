@@ -106,11 +106,13 @@ public class frmMain extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(20, 60, 160, 15);
 
+        tanggal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tanggal.setForeground(new java.awt.Color(255, 255, 255));
         tanggal.setText("Tanggal");
         jPanel1.add(tanggal);
         tanggal.setBounds(720, 20, 90, 30);
 
+        ljam.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ljam.setForeground(new java.awt.Color(255, 255, 255));
         ljam.setText("Jam");
         jPanel1.add(ljam);
